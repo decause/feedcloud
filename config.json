@@ -1,0 +1,12 @@
+{
+    "feeds": [
+        "http://blog-decause.rhcloud.com/rss.xml",
+        "https://nathanielca.se/feeds/all.atom.xml"
+    ],
+    "mask_filename": "fossboxlogo-mono.png",
+    "output_dir": "feedcloud",
+    "output_image": "feedcloud.png",
+    "stop_words": ["http", "https"],
+    "each_corpi": true,
+    "max_words": 1000
+}
