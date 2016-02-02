@@ -5,7 +5,6 @@ Using custom colors
 Using the recolor method and custom coloring functions.
 """
 
-import random
 import feedparser
 import os
 import json
@@ -14,7 +13,7 @@ import string
 
 from os import path
 from scipy.misc import imread
-from wordcloud import WordCloud, STOPWORDS
+from wordcloud import WordCloud, STOPWORDS, get_single_color_func
 from bs4 import BeautifulSoup
 
 
@@ -35,10 +34,6 @@ def scrapenwrite(feeds, output_dir):
                     g.write(contents.encode('utf8'))
 
 
-def grey_color_func(word, font_size, position, orientation, random_state=None):
-    return "hsl(0, 0%%, %d%%)" % random.randint(60, 100)
-
-
 def generate_word_cloud(text, mask_filename, output_image, stop_words,
                         max_words=1000):
     d = path.dirname(__file__)  # get basename to prepend to mask_filename
@@ -54,7 +49,7 @@ def generate_word_cloud(text, mask_filename, output_image, stop_words,
     wc = WordCloud(max_words=max_words, mask=mask, stopwords=stopwords,
                    margin=10, random_state=1).generate(text)
 
-    wc.recolor(color_func=grey_color_func, random_state=3)
+    wc.recolor(color_func=get_single_color_func('grey'), random_state=3)
 
     wc.to_file(output_image)
 
