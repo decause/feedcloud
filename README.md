@@ -3,6 +3,12 @@
 
 FeedCloud
 =========
+
+## [Project moved to Pagure](https://pagure.io/feedcloud)
+
+**Please file any issues or pull requests against the [Pagure project](https://pagure.io/feedcloud)!**
+
+
 This is a set of scripts that pull from a list of RSS/XML/ATOM feeds, and write
 those contents to text corpi, to be fed into word_cloud. You will need to
 install word_cloud as noted below.
